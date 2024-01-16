@@ -1,0 +1,12 @@
+.navbar{
+    font-size: 1.5rem;
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.navbar>*{
+    background-color: yellowgreen;
+    width: 10rem;
+    text-align: center;
+}
