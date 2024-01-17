@@ -2,11 +2,15 @@
     font-size: 1.5rem;
     background-color: red;
     display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-}
-.navbar>*{
-    background-color: yellowgreen;
-    width: 10rem;
-    text-align: center;
+    justify-content: space-between;
+    align-items:center;
+    height: 5rem;
+    width: 100%;
+    position: fixed;
+    &>*{
+        background-color: yellowgreen;
+        width: 10rem;
+        text-align: center;
+    }
+
 }
