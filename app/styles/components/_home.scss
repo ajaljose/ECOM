@@ -1,29 +1,51 @@
-.navbar{
-    font-size: 1.35rem;
-    padding: 1.2rem;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    height: 6rem;
-    width: 100%;
-    position: fixed;
-    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;s
-    &>*{
-        width: auto;
-        text-align: center;
-    }
-    &__logo {
-        padding: 1rem;
-        height: auto;
-        width: 5rem;
-        background-color: black;
-    }
-    &__menu{
-        font-family: Arial, Helvetica, sans-serif;
+.home{
+    .navbar{
+        font-size: 1.35rem;
+        padding: 1.2rem;
+        background-color: rgb(255, 255, 255);
         display: flex;
         justify-content: space-between;
-        gap: 2rem;
+        align-items:center;
+        height: 6rem;
+        width: 100%;
+        // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;s
+        &>*{
+            width: auto;
+            text-align: center;
+        }
+        &__logo {
+            padding: 1rem;
+            height: auto;
+            width: 5rem;
+            background-color: black;
+        }
+        &__menu{
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+    
     }
+    .hero{
+        position: relative;
+        height: 55rem;
+        background-image: linear-gradient(
+            to right,
+            rgba($color-primary-light, 0.8),
+            rgba($color-primary-dark, 0.8));
 
+        &__image{
+            @include absCenter;
+            height: auto;
+            width: 45rem;
+            z-index: 100;
+        }
+        &__product{
+            @include absCenter;
+            font-size: 15rem;
+            z-index: 90;
+            color: #fff;
+        }
+    }
 }
