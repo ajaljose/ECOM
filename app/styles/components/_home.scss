@@ -1,14 +1,14 @@
 .navbar{
-    font-size: 1.7rem;
-    padding: 1rem;
+    font-size: 1.35rem;
+    padding: 1.2rem;
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
     align-items:center;
-    height: 5rem;
+    height: 6rem;
     width: 100%;
     position: fixed;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;s
     &>*{
         width: auto;
         text-align: center;
@@ -18,6 +18,12 @@
         height: auto;
         width: 5rem;
         background-color: black;
+    }
+    &__menu{
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
     }
 
 }

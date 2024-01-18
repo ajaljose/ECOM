@@ -1,14 +1,17 @@
 import React from 'react'
-import './home.scss';
+// import './home.scss';
 import github from "../images/logo-white.png"; 
 function Home() {
-  console.log("asa",github);
   return (
     <div>
       <div className="navbar">
-        <img src={github.src} alt="GitHub Logo" className='navbar__logo'/>
-        <h3 className="navbar__name">E-COMMERCE</h3>
-        <h3 className="navbar__menu">MENU</h3>
+        <img src={github.src} alt="GitHub Logo" className='navbar__logo' title='URBAN KING'/>
+        <div className='navbar__menu'>
+          <h3>Home</h3>
+          <h3>Shop</h3>
+          <h3>Blog</h3>
+          <h3>Contact</h3>
+        </div>
       </div>
     </div>
   );
