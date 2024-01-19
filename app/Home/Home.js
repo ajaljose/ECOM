@@ -12,14 +12,22 @@ function Home() {
   const [gradientStyle, setGradientStyle] = useState({
     backgroundImage: 'linear-gradient(to right, rgba(67, 97, 238, 0.8), rgba(114, 9, 183, 0.8))',
   });
+  const [prodName,setprodName]=useState('HEADPHONES');
   // Function to handle click event and change the image source
   const handleClick = () => {
-    // Change the image source based on the current image
-    currentImage === hero1? setGradientStyle({ backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1))',}): setGradientStyle({
-      backgroundImage: 'linear-gradient(to right, rgba(67, 97, 238, 0.8), rgba(114, 9, 183, 0.8))',
-    });
-    const newImage = currentImage === hero1 ? hero2 : hero1;
-    setCurrentImage(newImage);
+  
+    if(currentImage === hero1){
+      setGradientStyle({ backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1))',});
+      setCurrentImage(hero2);
+      setprodName('MOBILES');
+    }else{
+      setGradientStyle({
+        backgroundImage: 'linear-gradient(to right, rgba(67, 97, 238, 0.8), rgba(114, 9, 183, 0.8))',
+      });
+      setCurrentImage(hero1);
+      setprodName('HEADPHONES');
+    }
+    
   };
   return (
     <div className='home'>
@@ -38,7 +46,7 @@ function Home() {
           <img src={currentImage.src} alt="HeadPhones" className='hero__images_2' />
           <img src={right.src} alt="HeadPhones" className='hero__images_3'  onClick={handleClick}/>
         </div>
-        <h1 className='hero__product'>HEADPHONES</h1>
+        <h1 className='hero__product'>{prodName}</h1>
         <button className='hero__btn1'>Shop Now</button>
         <button className='hero__btn2'>Categories</button>
       </div>
