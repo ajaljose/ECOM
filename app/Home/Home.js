@@ -17,6 +17,8 @@ function Home() {
       <div className='hero'>
       <img src={hero1.src} alt="GitHub Logo" className='hero__image' />
        <h1 className='hero__product'>HEADPHONES</h1>
+       <button className='hero__btn1'>BTN1</button>
+       <button className='hero__btn2'>BTN2</button>
       </div>
     </div>
   );
