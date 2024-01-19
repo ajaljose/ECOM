@@ -30,22 +30,81 @@
     .hero{
         position: relative;
         height: 55rem;
-        background-image: linear-gradient(
-            to right,
-            rgba($color-primary-light, 0.8),
-            rgba($color-primary-dark, 0.8));
+        background-image: linear-gradient(to right,rgba($color-primary-light, 0.8),rgba($color-primary-dark, 0.8));
 
-        &__image{
-            @include absCenter;
-            height: auto;
-            width: 45rem;
-            z-index: 100;
+        &__images{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+            &_2{
+                height: auto;
+                width: 45rem;
+                z-index: 100;
+            }
+            &_1,&_3{
+                width: 6rem;
+                opacity: 0.5;
+                 
+                &:hover{
+                    opacity: 0.7;
+                    cursor: pointer;
+                }
+            }
+            &_2{
+                cursor: grab;
+                &:active{
+                    cursor: grabbing;
+                }
+            }
         }
+
         &__product{
-            @include absCenter;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             font-size: 15rem;
             z-index: 90;
             color: #fff;
         }
+
+        &__btn1{
+            background-color: #ffffff00;
+            border: 2px solid #fff;
+            color: rgb(255, 255, 255);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius:27px;
+            text-decoration: none;
+            position: absolute;
+            top:55%;
+            left: 20%;
+            font-weight: 700;
+            z-index: 100;
+        }
+
+        &__btn2{
+            background-color: #ffffff;
+            border: none;
+            color:rgb(0, 0, 0);
+            
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 1.6rem;
+            cursor: pointer;
+            border-radius:2.7rem;
+            text-decoration: none;
+            position: absolute;
+
+            top:55%;
+            left: 30%;
+            font-weight: 700;
+            z-index: 100;
+        }
+
     }
 }
