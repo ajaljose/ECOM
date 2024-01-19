@@ -30,7 +30,7 @@
     .hero{
         position: relative;
         height: 55rem;
-        background-image: linear-gradient(to right,rgba($color-primary-light, 0.8),rgba($color-primary-dark, 0.8));
+        // background-image: linear-gradient(to right,rgba(var(--color-primary-light), 0.8),rgba(var(--color-primary-dark), 0.8));
 
         &__images{
             display: flex;
