@@ -4,7 +4,10 @@ import hero1 from "../images/hero1.png";
 import hero2 from "../images/iphone.png";
 import left from "../images/left.png";
 import right from "../images/right.png";
-
+import shipping from "../images/shipping.png";
+import money from "../images/money.png";
+import support from "../images/support.png";
+import card from "../images/card.png";
 function Home() {
   // Use state to track the current image source
 
@@ -42,13 +45,76 @@ function Home() {
       </div>
       <div className='hero' style={gradientStyle}>
         <div className='hero__images'>
-          <img src={left.src} alt="HeadPhones" className='hero__images_1' />
+          <img src={left.src} alt="HeadPhones" className='hero__images_1' onClick={handleClick}/>
           <img src={currentImage.src} alt="HeadPhones" className='hero__images_2' />
           <img src={right.src} alt="HeadPhones" className='hero__images_3'  onClick={handleClick}/>
         </div>
         <h1 className='hero__product'>{prodName}</h1>
         <button className='hero__btn1'>Shop Now</button>
         <button className='hero__btn2'>Categories</button>
+      </div>
+      <div className='features'>
+        <div className='features__shipping'>
+            <img src={shipping.src} className='features__img'></img>
+            <div className='features__text'>
+             <h1>Free shipping</h1>
+             <h3>On Purschase Over 500</h3>
+            </div>
+        </div>
+        <div className='features__shipping'>
+            <img src={support.src} className='features__img'></img>
+            <div className='features__text'>
+             <h1>Online Support</h1>
+             <h3>24/7 Technical Support</h3>
+            </div>
+        </div>
+        <div className='features__shipping'>
+            <img src={money.src} className='features__img'></img>
+            <div className='features__text'>
+             <h1>Money Back</h1>
+             <h3>30 Days Guarranty</h3>
+            </div>
+        </div>
+        <div className='features__shipping'>
+            <img src={card.src} className='features__img'></img>
+            <div className='features__text'>
+             <h1>Secure Payment</h1>
+             <h3>All Cards Accepted</h3>
+            </div>
+        </div>
+      </div>
+      <div className='categories'>
+        <div className='categories__speakers'>
+          <div className='warp'>
+          <h3>Blast.Past.Fast</h3>
+          <h1>Speakers With Signature sound</h1>
+          <button>Shop By Category</button>
+          </div>
+          
+          <img  src={card.src}></img>
+        </div>
+        <div className='categories__watches'>
+        <div className='warp'>
+
+        <h3>Smart Watches</h3>
+          <h1>Best Smart Watched for Men & Women</h1>
+          <button>Shop By Category</button>
+          <img  src={card.src}></img>
+        </div>
+        
+        </div>
+        <div className='categories__headphones'>
+        <h3>Wireless HeadPhones</h3>
+          <h1>Own Every Match with Gaming HeadPhones</h1>
+          <button>Shop By Category</button>
+          <img  src={card.src}></img>
+        </div>
+        <div className='categories__tws'>
+        <h3>EarBuds.</h3>
+          <h1>Top Rated & Best Earbuds</h1>
+          <button>Shop By Category</button>
+          <img  src={card.src}></img>
+        </div>
       </div>
     </div>
   );
