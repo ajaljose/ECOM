@@ -9,9 +9,9 @@ import money from "../images/money.png";
 import support from "../images/support.png";
 import card from "../images/card.png";
 import tws from "../images/tws.png";
-// import card from "../images/card.png";
-// import card from "../images/card.png";
-// import card from "../images/card.png";
+import speaker from "../images/speaker.png";
+import watch from "../images/watch.png";
+import headphone from "../images/headphone.png";
 function Home() {
   // Use state to track the current image source
 
@@ -95,7 +95,7 @@ function Home() {
                 <button>Shop By Category</button>
             </div>            
           
-            <img  src={card.src}></img>
+            <img  src={speaker.src}></img>
         </div>
         
         <div className='categories__watches'>
@@ -104,7 +104,7 @@ function Home() {
                 <h1>Best Smart Watched for Men & Women</h1>
                 <button>Shop By Category</button>
             </div>
-            <img  src={card.src}></img>        
+            <img  src={watch.src}></img>        
         </div>
 
         <div className='categories__headphones'>
@@ -113,7 +113,7 @@ function Home() {
                 <h1>Own Every Match with Gaming HeadPhones</h1>
                 <button>Shop By Category</button>
             </div>
-            <img  src={card.src}></img>
+            <img  src={headphone.src}></img>
         </div>
 
         <div className='categories__tws'>
