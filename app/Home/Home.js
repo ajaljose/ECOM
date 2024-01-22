@@ -8,6 +8,10 @@ import shipping from "../images/shipping.png";
 import money from "../images/money.png";
 import support from "../images/support.png";
 import card from "../images/card.png";
+import tws from "../images/tws.png";
+// import card from "../images/card.png";
+// import card from "../images/card.png";
+// import card from "../images/card.png";
 function Home() {
   // Use state to track the current image source
 
@@ -85,35 +89,40 @@ function Home() {
       </div>
       <div className='categories'>
         <div className='categories__speakers'>
-          <div className='warp'>
-          <h3>Blast.Past.Fast</h3>
-          <h1>Speakers With Signature sound</h1>
-          <button>Shop By Category</button>
-          </div>
+            <div className='categories__warp'>
+                <h3>Blast.Past.Fast</h3>
+                <h1>Speakers With Signature sound</h1>
+                <button>Shop By Category</button>
+            </div>            
           
-          <img  src={card.src}></img>
-        </div>
-        <div className='categories__watches'>
-        <div className='warp'>
-
-        <h3>Smart Watches</h3>
-          <h1>Best Smart Watched for Men & Women</h1>
-          <button>Shop By Category</button>
-          <img  src={card.src}></img>
+            <img  src={card.src}></img>
         </div>
         
+        <div className='categories__watches'>
+            <div className='categories__warp'>
+                <h3>Smart Watches</h3>
+                <h1>Best Smart Watched for Men & Women</h1>
+                <button>Shop By Category</button>
+            </div>
+            <img  src={card.src}></img>        
         </div>
+
         <div className='categories__headphones'>
-        <h3>Wireless HeadPhones</h3>
-          <h1>Own Every Match with Gaming HeadPhones</h1>
-          <button>Shop By Category</button>
-          <img  src={card.src}></img>
+            <div className='categories__warp'>
+                <h3>Wireless HeadPhones</h3>
+                <h1>Own Every Match with Gaming HeadPhones</h1>
+                <button>Shop By Category</button>
+            </div>
+            <img  src={card.src}></img>
         </div>
+
         <div className='categories__tws'>
-        <h3>EarBuds.</h3>
-          <h1>Top Rated & Best Earbuds</h1>
-          <button>Shop By Category</button>
-          <img  src={card.src}></img>
+            <div className='categories__warp'>
+                <h3>EarBuds.</h3>
+                <h1>Top Rated & Best Earbuds</h1>
+                <button>Shop By Category</button>
+            </div>
+            <img  src={tws.src}></img>          
         </div>
       </div>
     </div>

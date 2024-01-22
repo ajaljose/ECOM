@@ -132,7 +132,6 @@
     }
     .categories{
         padding: 7rem 25rem;
-        height: 60rem;
         color: #fff;
         display: grid;
   
@@ -140,7 +139,28 @@
             border-radius: 3rem;
             padding: 4rem 2.5rem;
         }
-       button{
+   
+        grid-template-areas:'left top top right'
+                            'left bottom bottom right';
+        &__speakers{
+            grid-area: left;
+            background-color:#3F7162;
+        }
+        &__watches{
+            grid-area: top;
+            background-color: #D6D5D2;
+            color: #000000;
+        }
+        &__headphones{
+            grid-area: bottom;
+            background-color: #C7162A;
+        }
+        &__tws{
+            grid-area: right;
+            background-color: rgb(0, 0, 0);
+        }
+        grid-gap:4rem;
+        button{
             background-color: #ffffff;
             border: 2px solid #fff;
             color:rgb(0, 0, 0);
@@ -161,36 +181,5 @@
                 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             }
         }
-        &__speakers{
-            grid-area: left;
-            background-color:#3F7162;
-            width: 25rem;
-        }
-        &__watches{
-            grid-area: top;
-            background-color: #D6D5D2;
-            width: 40rem;
-            color: #000000;
-            h1{
-                width:70%;
-            }
-        }
-        &__headphones{
-            grid-area: bottom;
-            background-color: #C7162A;
-            width: 40rem;
-            h1{
-                width:70%;
-            }
-        }
-        &__tws{
-            grid-area: right;
-            background-color: rgb(0, 0, 0);
-            
-             width: 25rem;
-        }
-        grid-template-areas:'left top top  right'
-                            'left bottom bottom right';
-                            gap:4rem;
     }
 }
