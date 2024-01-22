@@ -125,6 +125,22 @@ function Home() {
             <img  src={tws.src}></img>          
         </div>
       </div>
+      <div className='watches'>
+        <h1>Top Rated Watches</h1>
+        <p>"Empower Your Every Moment with Intuitive Connectivity: Unleash the Future on Your Wrist."</p>
+        <div className='watches__content'>
+              <div className='watches__content__single'>
+                <img src={watch.src}></img>
+                <h3>Storm Pro Call</h3>
+                <button>Rs 5000</button>
+              </div>
+              <div className='watches__content__single'>
+                <img src={watch.src}></img>
+                <h3>Storm Pro Call</h3>
+                <button>Rs 5000</button>
+              </div>
+        </div>
+      </div>
     </div>
   );
 }
