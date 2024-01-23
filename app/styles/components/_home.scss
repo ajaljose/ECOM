@@ -217,16 +217,46 @@
     }
     .watches{
         padding: 10rem 15rem;
+        &__header{
+            font-size: 3rem;
+        }
+        &__tagline{
+            font-size: 2rem;
+            font-style: italic;
+        }
         &__content{
+            margin-top: 5rem;
             display: flex;
             gap: 5rem;
+            flex-wrap: wrap;
             &__single{
                 display: flex;    
                 flex-direction: column;
                 align-items: center;
                 img{
                     width: 20rem;
-                }            
+                } 
+                button{
+                    background-color: #C4D028;
+                    border: 2px solid #fff;
+                    color:rgb(0, 0, 0);
+                    
+                    padding: .5rem 1rem;
+                    text-align: center;
+                    font-size: 1.6rem;
+                    cursor: pointer;
+                    border-radius:2.7rem;
+                    text-decoration: none;
+        
+                    font-weight: 700;
+                    z-index: 100;
+                    &:active{
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                    }
+                    &:hover:not(:active){
+                        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    }
+                }           
             }
         }
     }

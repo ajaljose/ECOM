@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
+      "title": "Storm Pro Call",
+      "price": 5000
+    },
+    {
+        "id": 1,
+        "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
+        "title": "Storm Pro Call",
+        "price": 5000
+      },
+      {
+        "id": 1,
+        "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
+        "title": "Storm Pro Call",
+        "price": 5000
+      },
+      {
+        "id": 1,
+        "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
+        "title": "Storm Pro Call",
+        "price": 5000
+      }, {
+        "id": 1,
+        "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
+        "title": "Storm Pro Call",
+        "price": 5000
+      },
+      {
+          "id": 1,
+          "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
+          "title": "Storm Pro Call",
+          "price": 5000
+        },
+        {
+          "id": 1,
+          "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
+          "title": "Storm Pro Call",
+          "price": 5000
+        },
+        {
+          "id": 1,
+          "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
+          "title": "Storm Pro Call",
+          "price": 5000
+        }
+  ]
+  

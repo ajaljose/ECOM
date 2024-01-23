@@ -12,6 +12,7 @@ import tws from "../images/tws.png";
 import speaker from "../images/speaker.png";
 import watch from "../images/watch.png";
 import headphone from "../images/headphone.png";
+import watchesData from './watchesData.json';
 function Home() {
   // Use state to track the current image source
 
@@ -126,19 +127,26 @@ function Home() {
         </div>
       </div>
       <div className='watches'>
-        <h1>Top Rated Watches</h1>
-        <p>"Empower Your Every Moment with Intuitive Connectivity: Unleash the Future on Your Wrist."</p>
+        <h1 className='watches__header'>Top Rated Watches</h1>
+        <q className='watches__tagline'>Empower Your Every Moment with Intuitive Connectivity: Unleash the Future on Your Wrist.</q>
         <div className='watches__content'>
-              <div className='watches__content__single'>
+              {/* <div className='watches__content__single'>
                 <img src={watch.src}></img>
                 <h3>Storm Pro Call</h3>
                 <button>Rs 5000</button>
               </div>
               <div className='watches__content__single'>
-                <img src={watch.src}></img>
+                <img src="https://i.imgur.com/ZF6s192.jpg"></img>
                 <h3>Storm Pro Call</h3>
                 <button>Rs 5000</button>
-              </div>
+              </div> */}
+               {watchesData.map((watch) => (
+       <div className='watches__content__single'>
+       <img src={watch.imageSrc}></img>
+       <h3>Storm Pro Call</h3>
+       <button>Rs 5000</button>
+     </div>
+      ))}
         </div>
       </div>
     </div>
