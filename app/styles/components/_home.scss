@@ -235,8 +235,9 @@
                 display: flex;    
                 flex-direction: column;
                 align-items: center;
+                border-radius: 2rem;
                 img{
-                    width: 20rem;
+                    width: 25rem;
                 } 
                 button{
                     background-color: #C4D028;
@@ -258,10 +259,18 @@
                     &:hover:not(:active){
                         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
                     }
+                    &:hover{
+                        cursor: pointer;
+                        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                    }
                 }
                 button::before{
                     content:'Rs '
-                }           
+                }  
+                &:hover{
+                    cursor: pointer;
+                    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                }         
             }
         }
     }

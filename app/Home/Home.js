@@ -14,9 +14,18 @@ import watch from "../images/watch.png";
 import headphone from "../images/headphone.png";
 import watchesData from './watchesData.json';
 import redheadphone from '../images/redheadphone.png';
+import watch0 from "../images/watch0.png";
+import watch1 from "../images/watch1.png";
+import watch2 from "../images/watch2.png";
+import watch3 from "../images/watch3.png";
+import watch4 from "../images/watch4.png";
+import watch5 from "../images/watch5.png";
+import watch6 from "../images/watch6.png";
+import watch7 from "../images/watch7.png";
+
 function Home() {
   // Use state to track the current image source
-
+  const [watchList,setwatchList]=useState([watch0,watch1,watch2,watch3,watch4,watch5,watch6,watch7]);
   const [currentImage, setCurrentImage] = useState(hero1);
   const [gradientStyle, setGradientStyle] = useState({
     backgroundImage: 'linear-gradient(to right, rgba(67, 97, 238, 0.8), rgba(114, 9, 183, 0.8))',
@@ -141,9 +150,9 @@ function Home() {
                 <h3>Storm Pro Call</h3>
                 <button>Rs 5000</button>
               </div> */}
-               {watchesData.map((watch) => (
+               {watchesData.map((watch,index) => (
        <div className='watches__content__single'>
-       <img src={watch.imageSrc}></img>
+       <img src={watchList[index].src||watch.imageSrc}></img>
        <h3>{watch.title}</h3>
        <button>{watch.price}</button>
      </div>
