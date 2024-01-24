@@ -3,30 +3,30 @@
       "id": 1,
       "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
       "title": "Storm Pro Call",
-      "price": 5000
+      "price": 1000
     },
     {
         "id": 1,
         "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
-        "title": "Storm Pro Call",
+        "title": "Boat Flash",
         "price": 5000
       },
       {
         "id": 1,
         "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
-        "title": "Storm Pro Call",
-        "price": 5000
+        "title": "FireBoltt Dream WatchPhone",
+        "price": 2000
       },
       {
         "id": 1,
         "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
-        "title": "Storm Pro Call",
-        "price": 5000
+        "title": "Apple Watch 8",
+        "price": 40000
       }, {
         "id": 1,
         "imageSrc": "http://localhost:3000/_next/static/media/watch.371778d3.png",
-        "title": "Storm Pro Call",
-        "price": 5000
+        "title": "Realme Watch",
+        "price": 3000
       },
       {
           "id": 1,
