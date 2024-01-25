@@ -171,7 +171,7 @@ function Home() {
       </div>
       <div className='product'>
         <h1 className='product__header'>Top Rated Earbuds</h1>
-        <q className='product__tagline'>Empower Your Every Moment with Intuitive Connectivity: Unleash the Future on Your Wrist.</q>
+        <q className='product__tagline'>Feel the beauty of sound..</q>
         <div className='product__content'>
                {watchesData.map((watch,index) => (
        <div className='product__content__single'>
