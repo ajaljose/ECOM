@@ -30,7 +30,10 @@ import earbuds4 from "../images/earbuds4.png";
 import earbuds5 from "../images/earbuds5.png";
 import earbuds6 from "../images/earbuds6.png";
 import earbuds7 from "../images/earbuds7.png";
-
+import headphone2 from "../images/headphone2.png";
+import avatar1 from "../images/avatar1.png";
+import avatar2 from "../images/avatar2.png";
+import avatar3 from "../images/avatar3.png";
 function Home() {
   // Use state to track the current image source
   const [watchList,setwatchList]=useState([watch0,watch1,watch2,watch3,watch4,watch5,watch6,watch7]);
@@ -169,7 +172,7 @@ function Home() {
 
         </div>
       </div>
-      <div className='product'>
+      <div className='product innerboxshadow'>
         <h1 className='product__header'>Top Rated Earbuds</h1>
         <q className='product__tagline'>Feel the beauty of sound..</q>
         <div className='product__content'>
@@ -180,6 +183,29 @@ function Home() {
        <button>{watch.price}</button>
      </div>
       ))}
+        </div>
+      </div>
+      <div className='reviews'>
+        <div className='reviews__cards'>
+          <img src={headphone2.src} className='reviews__cards__hero'></img>
+          <q>The SwiftBeats X100 headphones redefine comfort and performance. Feather-light design and impeccable sound quality make these a must-have. Pure audio bliss in a compact package!</q>
+          <img src={avatar1.src}className='reviews__cards__user'></img>
+          <h3>John Doe</h3>
+          <p>⭐️⭐️⭐️⭐️⭐️ </p>
+        </div>
+        <div className='reviews__cards'>
+          <img src={tws.src} className='reviews__cards__hero'></img>
+          <q>The battery life is impressive too. I charged them once, and they lasted through a week of daily use. The Bluetooth connectivity is seamless, allowing you to dance, jog, or cook without being tethered to your device.</q>
+          <img src={avatar3.src}className='reviews__cards__user'></img>
+          <h3>John Doe</h3>
+          <p>⭐️⭐️⭐️⭐️⭐️ </p>
+        </div>
+        <div className='reviews__cards'>
+          <img src={watch5.src} className='reviews__cards__hero'></img>
+          <q>The SwiftBeats X100 headphones redefine comfort and performance. Feather-light design and impeccable sound quality make these a must-have. Pure audio bliss in a compact package!</q>
+          <img src={avatar1.src}className='reviews__cards__user'></img>
+          <h3>John Doe</h3>
+          <p>⭐️⭐️⭐️⭐️⭐️ </p>
         </div>
       </div>
     </div>
