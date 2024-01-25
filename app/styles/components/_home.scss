@@ -238,6 +238,7 @@
                 border-radius: 2rem;
                 img{
                     width: 25rem;
+                    filter: drop-shadow(8px 8px 10px gray);
                 } 
                 button{
                     background-color: #C4D028;
@@ -290,7 +291,7 @@
         }
         &__right{
             h3{
-
+                filter: drop-shadow(8px 8px 10px rgb(0, 0, 0));
                 font-size: 4rem;
             }
             button{
@@ -307,8 +308,10 @@
                 text-transform: capitalize;
                 font-weight: 700;
                 z-index: 100;
+                filter: drop-shadow(8px 8px 10px rgb(0, 0, 0));
                 &:active{
                     box-shadow: rgba(91, 91, 97, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                    filter: drop-shadow(8px 8px 10px rgba(118, 118, 118, 0.638));
                 }
                 &:hover:not(:active){
                     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -319,6 +322,7 @@
         position: absolute;
         left: 10rem;
         top: -12rem;
+        filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.848));
        }
     }
 }
