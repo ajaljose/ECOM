@@ -22,10 +22,19 @@ import watch4 from "../images/watch4.png";
 import watch5 from "../images/watch5.png";
 import watch6 from "../images/watch6.png";
 import watch7 from "../images/watch7.png";
+import earbuds8 from "../images/earbuds8.png";
+import earbuds1 from "../images/earbuds1.png";
+import earbuds2 from "../images/earbuds2.png";
+import earbuds3 from "../images/earbuds3.png";
+import earbuds4 from "../images/earbuds4.png";
+import earbuds5 from "../images/earbuds5.png";
+import earbuds6 from "../images/earbuds6.png";
+import earbuds7 from "../images/earbuds7.png";
 
 function Home() {
   // Use state to track the current image source
   const [watchList,setwatchList]=useState([watch0,watch1,watch2,watch3,watch4,watch5,watch6,watch7]);
+  const [earbudsList,setearbudsList]=useState([earbuds1,earbuds2,earbuds3,earbuds4,earbuds5,earbuds6,earbuds7,earbuds8]);
   const [currentImage, setCurrentImage] = useState(hero1);
   const [gradientStyle, setGradientStyle] = useState({
     backgroundImage: 'linear-gradient(to right, rgba(67, 97, 238, 0.8), rgba(114, 9, 183, 0.8))',
@@ -136,22 +145,12 @@ function Home() {
             <img  src={tws.src}></img>          
         </div>
       </div>
-      <div className='watches'>
-        <h1 className='watches__header'>Top Rated Watches</h1>
-        <q className='watches__tagline'>Empower Your Every Moment with Intuitive Connectivity: Unleash the Future on Your Wrist.</q>
-        <div className='watches__content'>
-              {/* <div className='watches__content__single'>
-                <img src={watch.src}></img>
-                <h3>Storm Pro Call</h3>
-                <button>Rs 5000</button>
-              </div>
-              <div className='watches__content__single'>
-                <img src="https://i.imgur.com/ZF6s192.jpg"></img>
-                <h3>Storm Pro Call</h3>
-                <button>Rs 5000</button>
-              </div> */}
+      <div className='product'>
+        <h1 className='product__header'>Top Rated Watches</h1>
+        <q className='product__tagline'>Empower Your Every Moment with Intuitive Connectivity: Unleash the Future on Your Wrist.</q>
+        <div className='product__content'>
                {watchesData.map((watch,index) => (
-       <div className='watches__content__single'>
+       <div className='product__content__single'>
        <img src={watchList[index].src||watch.imageSrc}></img>
        <h3>{watch.title}</h3>
        <button>{watch.price}</button>
@@ -168,6 +167,19 @@ function Home() {
             <h3 className='banner__right__header'>Get a welcome 50% off your first order</h3>
             <button>Shop By category</button>
 
+        </div>
+      </div>
+      <div className='product'>
+        <h1 className='product__header'>Top Rated Earbuds</h1>
+        <q className='product__tagline'>Empower Your Every Moment with Intuitive Connectivity: Unleash the Future on Your Wrist.</q>
+        <div className='product__content'>
+               {watchesData.map((watch,index) => (
+       <div className='product__content__single'>
+       <img src={earbudsList[index].src||watch.imageSrc}></img>
+       <h3>{watch.title}</h3>
+       <button>{watch.price}</button>
+     </div>
+      ))}
         </div>
       </div>
     </div>
