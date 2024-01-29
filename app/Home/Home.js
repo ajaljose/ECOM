@@ -34,6 +34,7 @@ import headphone2 from "../images/headphone2.png";
 import avatar1 from "../images/avatar1.png";
 import avatar2 from "../images/avatar2.png";
 import avatar3 from "../images/avatar3.png";
+import Footer from '../components/Footer';
 function Home() {
   // Use state to track the current image source
   const [watchList,setwatchList]=useState([watch0,watch1,watch2,watch3,watch4,watch5,watch6,watch7]);
@@ -208,6 +209,7 @@ function Home() {
           <p>⭐️⭐️⭐️⭐️⭐️ </p>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }
