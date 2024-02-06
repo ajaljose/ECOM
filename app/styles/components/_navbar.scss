@@ -1,0 +1,75 @@
+.navbar{
+    font-size: 1.35rem;
+    padding: 1.2rem;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    height: 6rem;
+    width: 100%;
+    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;s
+    &>*{
+        width: auto;
+        text-align: center;
+    }
+    &__logo {
+        padding: 1rem;
+        height: auto;
+        width: 5rem;
+        background-color: black;
+    }
+    &__menu{
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        gap: 2rem;
+        text-transform: uppercase;
+        .container {
+            position: relative;
+            --size-button: 4rem;
+            color: rgb(0, 0, 0);
+            .input {
+              padding-left: var(--size-button);
+              height: var(--size-button);
+              font-size: 1.5rem;                  
+              font-style: italic;
+              border: none;
+              outline: none;
+              width: var(--size-button);
+              transition: all ease 0.3s;
+              cursor: pointer;
+          
+              &:focus,
+              &:not(:invalid) {
+                width: 30rem;
+                cursor: text;
+                border-bottom: 3px solid black;
+              }
+          
+              &:focus + .icon,
+              &:not(:invalid) + .icon {
+                pointer-events: all;
+                cursor: pointer;
+              }
+            }
+          
+            .icon {
+              position: absolute;
+              width: var(--size-button);
+              height: var(--size-button);
+              top: 0;
+              left: 0;
+              padding: 0.8rem;
+              pointer-events: none;
+          
+              svg {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+          
+    }
+
+}
