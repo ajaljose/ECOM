@@ -1,5 +1,6 @@
 import React from 'react';
 import github from "../images/logo-white.png";
+import { Link } from 'react-router-dom';
 function Navbar() {
   return (
     <div>     
@@ -12,7 +13,7 @@ function Navbar() {
         />
 
         <div className="navbar__menu">
-          <div className="container">
+        <Link to='/search'><div className="container">
             <input
               type="text"
               name="text"
@@ -44,7 +45,7 @@ function Navbar() {
                 ></path>
               </svg>
             </div>
-          </div>
+          </div></Link>
           <h3>Home</h3>
           <h3>Shop</h3>
           <h3>Blog</h3>
