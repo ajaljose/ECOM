@@ -25,50 +25,53 @@
         align-items:center;
         gap: 2rem;
         text-transform: uppercase;
-        .container {
-            position: relative;
-            --size-button: 4rem;
-            color: rgb(0, 0, 0);
-            .input {
-              padding-left: var(--size-button);
-              height: var(--size-button);
-              font-size: 1.5rem;                  
-              font-style: italic;
-              border: none;
-              outline: none;
-              width: var(--size-button);
-              transition: all ease 0.3s;
-              cursor: pointer;
+        &__search{
+          display: flex;
+          justify-content: space-between;
+          border-radius: 2.2rem;
+          border: 2px solid #4a9eec00;
           
-              &:focus,
-              &:not(:invalid) {
-                width: 30rem;
-                cursor: text;
-                border-bottom: 3px solid black;
-              }
-          
-              &:focus + .icon,
-              &:not(:invalid) + .icon {
-                pointer-events: all;
-                cursor: pointer;
-              }
-            }
-          
-            .icon {
-              position: absolute;
-              width: var(--size-button);
-              height: var(--size-button);
-              top: 0;
-              left: 0;
-              padding: 0.8rem;
-              pointer-events: none;
-          
-              svg {
-                width: 100%;
-                height: 100%;
-              }
-            }
+          input[type="text"] {
+            width: 20rem;
+            padding: 1rem;
+            outline: none;
+            border: none;
+            border-radius: 2rem;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
           }
+          
+                    button[type="submit"] {
+                      color: rgb(0, 0, 0);
+                      --size-button: 4rem;
+                      width: var(--size-button);
+                      height: var(--size-button);
+                      padding: 0.8rem;        
+                      background-color: #4e99e9;
+                      border: none;
+                      // color: #fff;
+                      cursor: pointer;
+                      // padding: 1rem 2rem;
+                      border-radius: 2rem;
+                      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+                      transition: .9s ease;
+                     
+          
+                      &:hover {
+                        color: rgb(255, 255, 255);
+                        background-color: #376ba3;
+                        cursor: pointer;
+          
+                      }
+                    }
+          
+                    &:hover,
+                    &:focus {
+                      border: 2px solid #4A9DEC;
+                      box-shadow: 0px 0px 0px 7px rgba(74, 158, 236, 0.35);
+                      background-color: white;
+                    }
+        }
+        
           h3{
             a{
               
