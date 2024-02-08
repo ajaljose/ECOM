@@ -1,13 +1,35 @@
-import React, { useEffect } from 'react';
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Footer from "./Footer";
 function Search() {
+  const [products, setProducts] = useState([]);
   useEffect(() => {
-    // This code will be executed when the component is mounted (onload)
-    // alert('Component is loaded!');
-  }, []); // The empty dependency array ensures the effect runs only once on mount
+    try {
+      axios.get("https://fakestoreapi.com/products").then((response) => {
+        console.log(response);
+        setProducts(response.data);
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
 
   return (
-    <div>Search</div>
+    <>
+     <div className="search">
+      <div className="search__content">
+        {products.map((watch, index) => (
+          <div className="search__content__single">
+            <img src={watch.image}></img>
+            <h3>{watch.title}</h3>
+            <h1>{watch.price}</h1>
+          </div>
+        ))}
+      </div>      
+    </div>
+    <Footer/>
+    </>
+   
   );
 }
 
