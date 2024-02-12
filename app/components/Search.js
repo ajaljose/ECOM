@@ -17,6 +17,10 @@ function Search() {
   return (
     <>
      <div className="search">
+      <div className="search__filter">
+        <input type='range' min="0" max="100" ></input>
+        <button>Apply</button>
+      </div>
       <div className="search__content">
         {products.map((watch, index) => (
           <div className="search__content__single">
