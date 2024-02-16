@@ -14,6 +14,33 @@
         display: flex;
         flex-direction: column;
         width: 27rem;
+        &__content{
+            h3{
+                font-size: 1.5rem;
+                text-transform: uppercase;
+            }
+            .range {
+                width: 100%;
+                height: 1.5rem;
+                -webkit-appearance: none;
+                background: #d2d2d2;
+                outline: none;
+                border-radius: 1.5rem;
+                overflow: hidden;
+                // box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+              }
+              .range::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+                background: #3F7162;
+                cursor: pointer;
+                border: 4px solid #333;
+                box-shadow: -40.7rem 0 0 40rem #3F7162;
+              }
+              
+        }
     }
 
     &__content {

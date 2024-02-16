@@ -3,6 +3,9 @@ import axios from "axios";
 import Footer from "./Footer";
 function Search() {
   const [products, setProducts] = useState([]);
+  const [maxprice, setMaxprice] = useState(0);
+  const [htmlContent, setHtmlContent] = useState("0");
+
   useEffect(() => {
     try {
       axios.get("https://fakestoreapi.com/products").then((response) => {
@@ -13,26 +16,66 @@ function Search() {
       console.error(error);
     }
   }, []);
-
+  const rangeSlide = (val) => {
+    setHtmlContent(val);
+    setMaxprice(val);
+    try {
+      axios.get("https://fakestoreapi.com/products").then((response) => {
+        let filtered=[];
+        for(let i=0;i<response.data.length;i++){
+          if(response.data[i].price<=maxprice){
+            filtered.push(response.data[i]);
+          }
+        }
+        setProducts(filtered);
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <>
       <div className="search">
         <div className="search__filter">
-          {/* <div className="search__filter__content"> */}
-          <h3>MAX PRICE</h3>
-          <input id="price" type="range" min="0" max="100"></input>
-          {/* </div> */}
+          <div className="search__filter__content">
+            <h3>
+              MAX PRICE :{" "}
+              <span
+                id="rangeValue"
+                dangerouslySetInnerHTML={{ __html: htmlContent }}
+              ></span>
+            </h3>
+            <input
+              id="price"
+              className="range"
+              type="range"
+              name=""
+              min="0"
+              max="100"
+              value={htmlContent}
+              onChange={(e) => rangeSlide(e.target.value)}
+              onMouseMove={(e) => rangeSlide(e.target.value)}
+            />
+          </div>
           <hr></hr>
           <div className="search__filter__content">
             <h3>Customer Ratings</h3>
-            <input type="checkbox" id="fourStar"></input>
-            <label htmlFor="fourStar">4 Stars</label>
-            <input type="checkbox" id="threeStar"></input>
-            <label htmlFor="threeStar">3 Stars</label>
-            <input type="checkbox" id="twoStar"></input>
-            <label htmlFor="twoStar">2 Stars</label>
-            <input type="checkbox" id="oneStar"></input>
-            <label htmlFor="oneStar">1 Stars</label>
+            <div>
+              <input type="checkbox" id="fourStar"></input>
+              <label htmlFor="fourStar">4 Stars</label>
+            </div>
+            <div>
+              <input type="checkbox" id="threeStar"></input>
+              <label htmlFor="threeStar">3 Stars</label>
+            </div>
+            <div>
+              <input type="checkbox" id="twoStar"></input>
+              <label htmlFor="twoStar">2 Stars</label>
+            </div>
+            <div>
+              <input type="checkbox" id="oneStar"></input>
+              <label htmlFor="oneStar">1 Stars</label>
+            </div>
           </div>
           <hr></hr>
 
