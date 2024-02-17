@@ -17,8 +17,11 @@ function Search() {
     }
   }, []);
   const rangeSlide = (val) => {
-    setHtmlContent(val);
-    setMaxprice(val);
+     setHtmlContent(val);
+     setMaxprice(val);
+     filterData();
+  };
+  const filterData=()=>{
     try {
       axios.get("https://fakestoreapi.com/products").then((response) => {
         let filtered=[];
@@ -54,26 +57,25 @@ function Search() {
               max="100"
               value={htmlContent}
               onChange={(e) => rangeSlide(e.target.value)}
-              onMouseMove={(e) => rangeSlide(e.target.value)}
             />
           </div>
           <hr></hr>
           <div className="search__filter__content">
             <h3>Customer Ratings</h3>
             <div>
-              <input type="checkbox" id="fourStar"></input>
+              <input type="checkbox" id="fourStar" value="4" ></input>
               <label htmlFor="fourStar">4 Stars</label>
             </div>
             <div>
-              <input type="checkbox" id="threeStar"></input>
+              <input type="checkbox" id="threeStar" value="3"></input>
               <label htmlFor="threeStar">3 Stars</label>
             </div>
             <div>
-              <input type="checkbox" id="twoStar"></input>
+              <input type="checkbox" id="twoStar" value="2"></input>
               <label htmlFor="twoStar">2 Stars</label>
             </div>
             <div>
-              <input type="checkbox" id="oneStar"></input>
+              <input type="checkbox" id="oneStar" value="1"></input>
               <label htmlFor="oneStar">1 Stars</label>
             </div>
           </div>
