@@ -56,7 +56,7 @@ function Navbar() {
           </div>
           <h3>Home</h3>
           <h3  onClick={handleClick}>Shop</h3>
-          <h3>Blog</h3>
+          <h3>cart</h3>
           <h3>Contact</h3>
         </div>
       </div>
