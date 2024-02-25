@@ -87,8 +87,15 @@ function Search() {
           {products.map((watch, index) => (
             <div className="search__content__single">
               <img src={watch.image}></img>
-              <h3>{watch.title}</h3>
-              <h1>{watch.price}</h1>
+              <div className="search__details">
+              <h3 title={watch.title}>{watch.title.slice(0, 34)}</h3>              
+              <h2>⭐️{watch.rating.rate}</h2>
+              <div className="search__details__footer">
+              <h1>$ {watch.price}</h1>
+              <button><span>ADD TO CART</span></button>
+              </div>
+              
+              </div>              
             </div>
           ))}
         </div>
