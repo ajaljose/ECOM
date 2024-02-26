@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 function Search() {
   const [products, setProducts] = useState([]);
   const [maxprice, setMaxprice] = useState(0);
   const [htmlContent, setHtmlContent] = useState("0");
-
+  const navigate = useNavigate();
   useEffect(() => {
     try {
       axios.get("https://fakestoreapi.com/products").then((response) => {
@@ -21,6 +22,11 @@ function Search() {
      setMaxprice(val);
      filterData();
   };
+  const selectItem = (item) => {
+    alert("Clicked item with id "+item);
+ 
+      navigate('product');
+ };
   const filterData=()=>{
     try {
       axios.get("https://fakestoreapi.com/products").then((response) => {
@@ -85,7 +91,7 @@ function Search() {
         </div>
         <div className="search__content">
           {products.map((watch, index) => (
-            <div className="search__content__single">
+            <div className="search__content__single" data-itemId={watch.id} onClick={(e) => selectItem(watch.id)}>
               <img src={watch.image}></img>
               <div className="search__details">
               <h3 title={watch.title}>{watch.title.slice(0, 34)}</h3>              
