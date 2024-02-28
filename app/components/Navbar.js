@@ -6,7 +6,7 @@ function Navbar() {
   const navigate = useNavigate();
   const handleClick = () => {
     if (inputValue.trim() === "") {
-      navigate('search');
+      navigate('product');
     } else {
       navigate('search');
     }
@@ -55,7 +55,7 @@ function Navbar() {
               </button>
           </div>
           <h3>Home</h3>
-          <h3  onClick={handleClick}>Shop</h3>
+          <h3  onClick={()=>{navigate('search')}}>Shop</h3>
           <h3>cart</h3>
           <h3>Contact</h3>
         </div>
