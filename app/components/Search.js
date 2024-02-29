@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
+import add_cart from "../images/add_cart.png";
 function Search() {
   const [products, setProducts] = useState([]);
   const [maxprice, setMaxprice] = useState(0);
@@ -98,7 +99,7 @@ function Search() {
               <h2>⭐️{watch.rating.rate}</h2>
               <div className="search__details__footer">
               <h1>$ {watch.price}</h1>
-              <button><span>ADD TO CART</span></button>
+              <button title="ADD TO CART"><span> <img src={add_cart.src}></img></span></button>
               </div>
               
               </div>              
