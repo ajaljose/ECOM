@@ -25,7 +25,6 @@ function Search() {
   };
   const selectItem = (item) => {
     alert("Clicked item with id "+item);
-    navigate(-1);
       navigate('product');
  };
   const filterData=()=>{
