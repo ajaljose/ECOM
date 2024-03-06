@@ -23,8 +23,8 @@ function Search() {
      setMaxprice(val);
      filterData();
   };
-  const selectItem = (item) => {
-    alert("Clicked item with id "+item);
+  const selectItem = async(item) => {
+    await sessionStorage.setItem('prodId',item);
       navigate('product');
  };
   const filterData=()=>{
