@@ -15,10 +15,17 @@ function Product() {
   })
   return (
     <>
-      <div id="product">
+      <div className="product">
+        <div className="product__category">{product.category}</div>
         <div className="product__hero">
-          <div className="product__hero__left"></div>
-          <div className="product__hero__right"></div>
+          <div className="product__hero__left"><img
+            src={product.image}
+            alt={product.title}
+          /></div>
+          <div className="product__hero__right">
+            <h1 className="">{product.title}</h1>
+            <h1>{product.price}</h1>
+          </div>
         </div>        
       </div>
     </>
