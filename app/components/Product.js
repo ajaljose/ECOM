@@ -25,6 +25,7 @@ function Product() {
           <div className="product__hero__right">
             <h1 className="">{product.title}</h1>
             <h1>{product.price}</h1>
+            <p>{product.description}</p>
           </div>
         </div>        
       </div>

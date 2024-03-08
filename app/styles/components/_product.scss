@@ -1,22 +1,37 @@
-.product{
+.product {
     padding: 7rem 1rem 1rem 1rem;
-    &__category{
+
+    &__category {
         color: rgb(185, 185, 185);
         text-transform: uppercase;
         font-size: 1.5rem;
     }
-    &__hero{                
+
+    &__hero {
         display: flex;
         width: 100%;
-        &__left{
+
+        &__left {
             width: 50%;
             display: flex;
-    justify-content: center;
-    align-items: center;
-            img{
+            justify-content: center;
+            align-items: center;
+
+            img {
                 width: 40rem;
                 height: auto;
 
+            }
+        }
+        &__right{
+            width: 50%;
+            h1{
+                font-size: 5rem;
+                margin-bottom: 3rem;
+            }
+            p{
+                font-size: 2rem;
+                color: rgb(58, 58, 58);
             }
         }
     }
