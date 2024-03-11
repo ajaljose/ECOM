@@ -1,0 +1,93 @@
+.primary {
+    &__btn1 {
+        background-color: #ffffff;
+        border: 2px solid #fff;
+        color: rgb(0, 0, 0);
+        width: 15rem;
+        padding: 1.2rem 2rem;
+        text-align: center;
+        font-size: 1.6rem;
+        cursor: pointer;
+        border-radius: 2.7rem;
+        text-decoration: none;
+        font-weight: 700;
+        z-index: 100;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 15px;
+        text-transform: uppercase;
+        &:active {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+
+        &:hover:not(:active) {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+    }
+
+}
+
+.btn__increment {
+    // box-shadow: rgba(0, 0, 0, 0.234) 0px 5px 15px;
+    border: 1px solid rgb(187, 187, 187);
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2.7rem;
+    font-size: 2rem;
+    font-weight: 600;
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    &__min {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400;
+        cursor: pointer;
+        background-color: #ffffff;
+        padding: 1.2rem 2rem;
+        border: none;
+        width: 33.33%;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+
+        &:hover {
+            background-color: #e0dcdc;
+        }
+
+        &:active {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+    }
+
+    &__mid {
+        height: 100%;
+        width: 33.34%;
+        border: none;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    &__add {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 400;
+        cursor: pointer;
+        background-color: #ffffff;
+        padding: 1.2rem 2rem;
+        border: none;
+        width: 33.33%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+
+        &:hover {
+            background-color: #e0dcdc;
+        }
+
+        &:active {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+    }
+}

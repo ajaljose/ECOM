@@ -26,6 +26,15 @@ function Product() {
             <h1 className="">{product.title}</h1>
             <h1>{product.price}</h1>
             <p>{product.description}</p>
+            <div className="product__hero__right__addtocart">
+            <div className="btn__increment" id="itemCount">
+              <button className="btn__increment__min">-</button>
+              <input type="number" className="btn__increment__mid" placeholder="0" disabled></input>
+              <button className="btn__increment__add">+</button>
+            </div>
+            <button className="primary__btn1" id="btnAddCart">ADD to cart</button>
+            </div>            
+            <button className="primary__btn1" id="btnBuyNow">Buy Now</button>
           </div>
         </div>        
       </div>

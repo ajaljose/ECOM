@@ -33,6 +33,23 @@
                 font-size: 2rem;
                 color: rgb(58, 58, 58);
             }
+            &__addtocart{
+                width: 50%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: stretch;
+                margin: 2rem 0;
+                #itemCount,#btnAddCart{
+                    width: 45%;
+                }
+            }
+            #btnBuyNow{
+                width: 50%;
+                background-color: #56907f;
+                color: #ffffff;
+                border: none;
+            }
         }
     }
 }
