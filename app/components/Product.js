@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from "react";
+import Footer from "./Footer";
 import axios from "axios";
 function Product() {
   const [product, setProduct] = useState([]);
@@ -38,6 +39,7 @@ function Product() {
           </div>
         </div>        
       </div>
+      <Footer />
     </>
   );
 }
