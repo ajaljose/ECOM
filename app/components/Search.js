@@ -3,6 +3,7 @@ import axios from "axios";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 import add_cart from "../images/add_cart.png";
+import Loader from "./Loader";
 function Search() {
   const [products, setProducts] = useState([]);
   const [maxprice, setMaxprice] = useState(0);
@@ -43,7 +44,7 @@ function Search() {
     }
   };
   return (
-    <>
+      <>{products.length==0?<Loader/>:''}
       <div className="search">
         <div className="search__filter">
           <div className="search__filter__content">
@@ -90,7 +91,7 @@ function Search() {
           <button>Apply</button>
         </div>
         <div className="search__content">
-          {products.map((watch, index) => (
+          { products.map((watch, index) => (
             <div className="search__content__single" data-itemId={watch.id} onClick={(e) => selectItem(watch.id)}>
               <img src={watch.image}></img>
               <div className="search__details">
