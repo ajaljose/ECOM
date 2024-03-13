@@ -58,6 +58,7 @@
         gap: 3rem;
         flex-wrap: wrap;
         align-items: stretch;
+
         &__single {
             display: flex;
             flex-direction: column;
@@ -66,6 +67,7 @@
             background-color: #ffffff;
             padding: 2rem;
             border-radius: 1rem;
+
             img {
                 width: 23rem;
                 aspect-ratio: 1/1;
@@ -75,6 +77,60 @@
             &:hover {
                 box-shadow: #3F7162 0px 4px 12px;
                 cursor: pointer;
+            }
+        }
+
+        .product__skeleton {
+            // height: 50rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+            flex-wrap: wrap;
+            align-items: stretch;
+            &__single {
+                border-radius: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                // height: 20rem;
+                width: 25rem;
+                animation: shimmer 1.5s infinite;
+                padding: 2rem;
+                box-shadow: #3f716252 0px 4px 12px;
+                .skeleton__image {
+                    border-radius: 5px;
+                    height: 18rem;
+                    width: 18rem;
+                    background-image: linear-gradient(90deg,
+                            #ccc 0px,
+                            rgb(229 229 229 / 90%) 40px,
+                            #ccc 80px);
+                            background-size: 300%;
+                            background-position: 100% 0;
+                    margin-bottom: 1rem;
+                    animation: inherit;
+                }
+
+                .skeleton__header {
+                    margin-bottom: 1rem;
+                    border-radius: 5px;
+                    height: 1.5rem;
+                    width: 10rem;
+                    background-image: linear-gradient(90deg,
+                            #ccc 0px,
+                            rgb(229 229 229 / 90%) 40px,
+                            #ccc 80px);
+                            background-size: 300%;
+                            background-position: 100% 0;
+                            animation: inherit;
+                }
+            }
+        }
+
+        @keyframes shimmer {
+            to {
+                background-position: -100% 0;
             }
         }
     }
@@ -111,10 +167,12 @@
                     z-index: 10;
                     transition: color 0.4s;
                 }
-                 img{
+
+                img {
                     margin-top: 2px;
                     width: 3rem;
                 }
+
                 &:hover {
                     background: #aeaeae;
                 }

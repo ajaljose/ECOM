@@ -91,7 +91,7 @@ function Search() {
           <button>Apply</button>
         </div>
         <div className="search__content">
-          { products.map((watch, index) => (
+          {products.length!==0? products.map((watch, index) => (
             <div className="search__content__single" data-itemId={watch.id} onClick={(e) => selectItem(watch.id)}>
               <img src={watch.image}></img>
               <div className="search__details">
@@ -104,7 +104,17 @@ function Search() {
               
               </div>              
             </div>
+          )):<div className="product__skeleton">
+          {[1, 2, 3,4,5,6,7,8].map((index) => (
+            <div key={index} className="product__skeleton__single">
+              <div className="skeleton__image"></div>
+              {[1, 2].map((headerIndex) => (
+                <div key={headerIndex} className="skeleton__header"></div>
+              ))}
+            </div>
           ))}
+        </div>
+        }
         </div>
       </div>
       <Footer />
