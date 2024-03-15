@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import axios from "axios";
+import Loader from "./Loader";
 function Product() {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
   useEffect(() => {
     try {
       let url = "https://fakestoreapi.com/products/" + 1;
@@ -13,9 +14,9 @@ function Product() {
     } catch (error) {
       console.error(error);
     }
-  });
+  },[]);
   return (
-    <>
+    <>{Object.keys(product).length==0?<Loader/>:''}
       <div className="product">
         <div className="product__category">{product.category}</div>
         <div className="product__hero">
