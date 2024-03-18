@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import axios from "axios";
 import Loader from "./Loader";
-function Product() {
+function Product(props) {
   const [product, setProduct] = useState({});
   useEffect(() => {
     try {
-      let url = "https://fakestoreapi.com/products/" + 1;
+      let url = "https://fakestoreapi.com/products/" + props.productId;
       axios.get(url).then((response) => {
         console.log(response);
         setProduct(response.data);

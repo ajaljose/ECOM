@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Footer from "./Footer";
-// import { useNavigate } from "react-router-dom";
 import add_cart from "../images/add_cart.png";
 import Loader from "./Loader";
+import { useRouter } from "next/navigation";
 function Search() {
   const [products, setProducts] = useState([]);
   const [maxprice, setMaxprice] = useState(0);
   const [htmlContent, setHtmlContent] = useState("0");
-  // const navigate = useNavigate();
+  const router=useRouter();
   useEffect(() => {
     try {
       axios.get("https://fakestoreapi.com/products").then((response) => {
@@ -25,8 +25,7 @@ function Search() {
      filterData();
   };
   const selectItem = async(item) => {
-    await sessionStorage.setItem('prodId',item);
-      // navigate('product');
+    router.push('products/'+item);
  };
   const filterData=()=>{
     try {

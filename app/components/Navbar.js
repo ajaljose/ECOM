@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import github from "../images/logo-white.png";
-// import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 function Navbar() {
   const [inputValue, setInputValue] = useState("");
-  // const navigate = useNavigate();
+  const router=useRouter();
   const handleClick = () => {
-    // if (inputValue.trim() === "") {
-    //   navigate('product');
-    // } else {
-    //   navigate('search');
-    // }
+    if (inputValue.trim() === "") {
+      router.push('products');
+    } else {
+      router.push('search');
+    }
   };
 
   const handleInputChange = (event) => {
@@ -55,8 +55,8 @@ function Navbar() {
               </button>
           </div>
           <h3>Home</h3>
-          <h3  onClick={()=>{navigate('search')}}>Shop</h3>
-          <h3>cart</h3>
+          <h3  onClick={()=>{router.replace('/products')}}>Shop</h3>
+          <h3 onClick={()=>{router.push('/')}}>cart</h3>
           <h3>Contact</h3>
         </div>
       </div>
