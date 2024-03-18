@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import github from "../images/logo-white.png";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 function Navbar() {
   const [inputValue, setInputValue] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleClick = () => {
-    if (inputValue.trim() === "") {
-      navigate('product');
-    } else {
-      navigate('search');
-    }
+    // if (inputValue.trim() === "") {
+    //   navigate('product');
+    // } else {
+    //   navigate('search');
+    // }
   };
 
   const handleInputChange = (event) => {
