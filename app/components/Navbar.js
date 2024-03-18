@@ -54,9 +54,9 @@ function Navbar() {
                 </svg>
               </button>
           </div>
-          <h3>Home</h3>
+          <h3  onClick={()=>{router.push('/')}}>Home</h3>
           <h3  onClick={()=>{router.replace('/products')}}>Shop</h3>
-          <h3 onClick={()=>{router.push('/')}}>cart</h3>
+          <h3>cart</h3>
           <h3>Contact</h3>
         </div>
       </div>

@@ -1,14 +1,12 @@
 "use client"; 
-import App from './App';
 import './styles/main.scss';
-import { BrowserRouter } from 'react-router-dom';
+import Home from "./Home/Home";
+import Navbar from './components/Navbar';
 export default function Main() {
   return (
     <main >
-      <BrowserRouter>
-      
-      <App/>
-      </BrowserRouter>
+      <Navbar/>
+      <Home />
       
     </main>
   )
