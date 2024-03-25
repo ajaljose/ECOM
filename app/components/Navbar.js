@@ -6,7 +6,7 @@ function Navbar() {
   const router=useRouter();
   const handleClick = () => {
     if (inputValue.trim() === "") {
-      router.push('products');
+      router.replace('/products');
     } else {
       router.push('search');
     }
@@ -56,7 +56,7 @@ function Navbar() {
           </div>
           <h3  onClick={()=>{router.push('/')}}>Home</h3>
           <h3  onClick={()=>{router.replace('/products')}}>Shop</h3>
-          <h3>cart</h3>
+          <h3  onClick={()=>{router.replace('/cart')}}>cart</h3>
           <h3>Contact</h3>
         </div>
       </div>
