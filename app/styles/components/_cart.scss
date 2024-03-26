@@ -7,14 +7,19 @@
     align-items: center;
     font-size: 1.2rem;
     table{
-        border-collapse: separate;
+        border-collapse: collapse;
     border-spacing: 2rem 2rem;
     th{
         font-size: 1.4rem;
         font-weight:  700;
+        padding: 1rem
     }
        td{
         text-align: center;
+        padding: 1rem
+       }
+       tr{
+        border-bottom: 1px solid #dddddd;
        }
     }
     &__productDetails{
