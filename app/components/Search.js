@@ -4,10 +4,12 @@ import Footer from "./Footer";
 import add_cart from "../images/add_cart.png";
 import Loader from "./Loader";
 import { useRouter } from "next/navigation";
+import { useAppContext } from "@/context";
 function Search() {
   const [products, setProducts] = useState([]);
   const [maxprice, setMaxprice] = useState(0);
   const [htmlContent, setHtmlContent] = useState("0");
+  const { cartList,setCartList } = useAppContext();
   const router=useRouter();
   useEffect(() => {
     try {
@@ -27,6 +29,20 @@ function Search() {
   const selectItem = async(item) => {
     router.push('products/'+item);
  };
+ const handleAddtoCart=(event,item)=>{
+  event.stopPropagation();
+// console.log(item);
+let mFlag=false;
+let temp_cartList=cartList;
+  for(let i=0;i<temp_cartList.length;i++){
+    if(temp_cartList[i].id==item.id){
+      temp_cartList[i].quantity+=1;
+      mFlag=true;
+      break;
+    }
+  }
+  mFlag?setCartList(temp_cartList):(item.quantity=1,setCartList([...cartList,item]));
+ }
   const filterData=()=>{
     try {
       axios.get("https://fakestoreapi.com/products").then((response) => {
@@ -98,7 +114,7 @@ function Search() {
               <h2>⭐️{watch.rating.rate}</h2>
               <div className="search__details__footer">
               <h1>$ {watch.price}</h1>
-              <button title="ADD TO CART"><span> <img src={add_cart.src}></img></span></button>
+              <button title="ADD TO CART" onClick={(e)=>handleAddtoCart(e,watch)}><span> <img src={add_cart.src}></img></span></button>
               </div>
               
               </div>              
@@ -122,3 +138,17 @@ function Search() {
 }
 
 export default Search;
+// [
+//     {
+//         "id": 1,
+//         "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+//         "price": 109.95,
+//         "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+//         "category": "men's clothing",
+//         "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+//         "rating": {
+//             "rate": 3.9,
+//             "count": 120
+//         }
+//     },
+// ]

@@ -1,14 +1,17 @@
 import React,{useEffect,useState} from "react";
 import axios from "axios";
+import { useAppContext } from "@/context";
 function CartDetails() {
-  const [cartItems,setcartItems]=useState([]);
+  // const [cartItems,setcartItems]=useState([]);
+  const { state, cartList } = useAppContext();
   useEffect(() => {
+    console.log(state.hello,cartList)
     try {
-      let url = "https://fakestoreapi.com/products?limit=5";
-      axios.get(url).then((response) => {
-        console.log(response);
-        setcartItems(response.data);
-      });
+      // let url = "https://fakestoreapi.com/products?limit=5";
+      // axios.get(url).then((response) => {
+      //   console.log(response);
+      //   setcartItems(response.data);
+      // });
     } catch (error) {
       console.error(error);
     }
@@ -30,15 +33,15 @@ function CartDetails() {
               </tr>
             </thead>
             <tbody>
-          {  cartItems.map((item, index) => (<tr>
+          {  cartList.map((item, index) => (<tr>
                 <td><div className="cart__productDetails">
                 <img src={item.image}></img>
                 <h3>{item.title}</h3>
                   </div></td>
-                <td>1</td>
+                <td>{item.quantity}</td>
                 <td>{item.price}</td>
                 <td>1</td>
-                <td>X</td>
+                <td><button>X</button></td>
               </tr>))}
             </tbody>
           </table>
