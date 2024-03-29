@@ -40,7 +40,7 @@ function CartDetails() {
                   </div></td>
                 <td>{item.quantity}</td>
                 <td>{item.price}</td>
-                <td>1</td>
+                <td>{item.quantity*item.price}</td>
                 <td><button>X</button></td>
               </tr>))}
             </tbody>
