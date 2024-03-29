@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Footer from "./Footer";
 import axios from "axios";
 import { useAppContext } from "@/context";
 function CartDetails() {
@@ -76,6 +77,7 @@ function CartDetails() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import { useAppContext } from "@/context";
 function Search() {
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [slctdCtrgy, setslctdCtrgy] = useState('');
   const [maxprice, setMaxprice] = useState(0);
   const [htmlContent, setHtmlContent] = useState("0");
   const { cartList,setCartList } = useAppContext();
@@ -16,6 +18,10 @@ function Search() {
       axios.get("https://fakestoreapi.com/products").then((response) => {
         console.log(response);
         setProducts(response.data);
+      });
+      axios.get("https://fakestoreapi.com/products/categories").then((response) => {
+        console.log(response);
+        setCategories(response.data);
       });
     } catch (error) {
       console.error(error);
@@ -43,9 +49,31 @@ let temp_cartList=cartList;
   }
   mFlag?setCartList(temp_cartList):(item.quantity=1,setCartList([...cartList,item]));
  }
+ const shopByCat=(catgry)=>{
+  try {
+    axios.get("https://fakestoreapi.com/products/category/"+catgry).then((response) => {
+      setslctdCtrgy(catgry);
+      if(maxprice>0){
+        let filtered=[];
+        for(let i=0;i<response.data.length;i++){
+          if(response.data[i].price<=maxprice){
+            filtered.push(response.data[i]);
+          }
+        }
+        setProducts(filtered);
+        return;
+      }
+        
+        setProducts(response.data);
+      });
+  } catch (error) {
+    
+  }
+ }
   const filterData=(value)=>{
     try {
-      axios.get("https://fakestoreapi.com/products").then((response) => {
+      let url=slctdCtrgy!=''?"https://fakestoreapi.com/products/category/"+slctdCtrgy:"https://fakestoreapi.com/products"
+      axios.get(url).then((response) => {
         let filtered=[];
         for(let i=0;i<response.data.length;i++){
           if(response.data[i].price<=value){
@@ -83,27 +111,18 @@ let temp_cartList=cartList;
           </div>
           <hr></hr>
           <div className="search__filter__content">
-            <h3>Customer Ratings</h3>
-            <div>
-              <input type="checkbox" id="fourStar" value="4" ></input>
-              <label htmlFor="fourStar">4 Stars</label>
-            </div>
-            <div>
-              <input type="checkbox" id="threeStar" value="3"></input>
-              <label htmlFor="threeStar">3 Stars</label>
-            </div>
-            <div>
-              <input type="checkbox" id="twoStar" value="2"></input>
-              <label htmlFor="twoStar">2 Stars</label>
-            </div>
-            <div>
-              <input type="checkbox" id="oneStar" value="1"></input>
-              <label htmlFor="oneStar">1 Stars</label>
+            <h3>Shop By Category</h3>
+           
+            <div className="radio-input">
+            {categories.map((item,index)=>(
+              <div className="radio-group"><input type="radio" id={item} className="input" name="category" onClick={(e)=>shopByCat(item)} value={item}></input><label htmlFor={item}>{item}</label></div>
+            ))}
             </div>
           </div>
+          <br></br>
           <hr></hr>
 
-          <button>Apply</button>
+          <button className="secondary__btn filter-btn" onClick={(e)=>window.location.reload()}>RESET</button>
         </div>
         <div className="search__content">
           {products.length!==0? products.map((watch, index) => (
