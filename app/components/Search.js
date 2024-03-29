@@ -21,10 +21,10 @@ function Search() {
       console.error(error);
     }
   }, []);
-  const rangeSlide = (val) => {
+  const rangeSlide = async (val) => {
      setHtmlContent(val);
-     setMaxprice(val);
-     filterData();
+     await setMaxprice(Number(val));
+     filterData(Number(val));
   };
   const selectItem = async(item) => {
     router.push('products/'+item);
@@ -43,12 +43,12 @@ let temp_cartList=cartList;
   }
   mFlag?setCartList(temp_cartList):(item.quantity=1,setCartList([...cartList,item]));
  }
-  const filterData=()=>{
+  const filterData=(value)=>{
     try {
       axios.get("https://fakestoreapi.com/products").then((response) => {
         let filtered=[];
         for(let i=0;i<response.data.length;i++){
-          if(response.data[i].price<=maxprice){
+          if(response.data[i].price<=value){
             filtered.push(response.data[i]);
           }
         }
