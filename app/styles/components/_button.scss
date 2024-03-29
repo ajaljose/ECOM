@@ -23,7 +23,24 @@
     }
 
 }
+.secondary__btn{
+    background-color: #ff4040;
+    border: none;
+    color: white;
+    padding: 1.5rem 3.2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    &:active {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
 
+    &:hover:not(:active) {
+        box-shadow: rgba(100, 100, 111, 0.8) 0px 7px 29px 0px;
+    }
+}
 .btn__increment {
     // box-shadow: rgba(0, 0, 0, 0.234) 0px 5px 15px;
     border: 1px solid rgb(187, 187, 187);

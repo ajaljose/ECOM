@@ -64,7 +64,7 @@ function CartDetails() {
               <h3>Tax</h3>
               <h3>{(subTotal * 0.18).toFixed(2)}</h3>
             </div>
-            <button>Check Out</button>
+            <button className="secondary__btn">Check Out</button>
             <hr></hr>
             <h1>We Accept</h1>
             <div className="cart__content__checkout__row">
