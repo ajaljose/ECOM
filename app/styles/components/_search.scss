@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Teko:wght@300..700&display=swap');
 .search {
     background-color: #ededed;
     display: grid;
@@ -68,7 +69,8 @@
             background-color: #ffffff;
             padding: 2rem;
             border-radius: 1rem;
-
+            font-family: "Quicksand", sans-serif;
+            font-optical-sizing: auto;
             img {
                 width: 23rem;
                 aspect-ratio: 1/1;

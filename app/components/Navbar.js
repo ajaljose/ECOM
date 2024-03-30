@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import github from "../images/logo-white.png";
 import { useRouter } from "next/navigation";
+import bag from "../images/bag.png";
+import home from "../images/home.png";
+import contact from "../images/contact.png";
 function Navbar() {
   const [inputValue, setInputValue] = useState("");
   const router=useRouter();
@@ -54,10 +57,30 @@ function Navbar() {
                 </svg>
               </button>
           </div>
-          <h3  onClick={()=>{router.push('/')}}>Home</h3>
-          <h3  onClick={()=>{router.replace('/products')}}>Shop</h3>
-          <h3  onClick={()=>{router.replace('/cart')}}>cart</h3>
-          <h3>Contact</h3>
+          {/* <h3  onClick={()=>{router.push('/')}}>Home</h3> */}
+          <img
+          src={home.src}
+          alt="Cart Logo"
+          className="navbar__menuicon"
+          title="HOME"
+          onClick={()=>{router.push('/')}}
+        />
+         
+          {/* <h3  onClick={()=>{router.replace('/cart')}}>cart</h3> */}
+          <img
+          src={bag.src}
+          alt="Cart Logo"
+          className="navbar__menuicon"
+          title="CART"
+          onClick={()=>{router.replace('/cart')}}
+        />
+         <h3  onClick={()=>{router.replace('/products')}}>Shop</h3>
+         <img
+          src={contact.src}
+          alt="Cart Logo"
+          className="navbar__menuicon"
+          title="CONTACT"
+        />
         </div>
       </div>
     </div>

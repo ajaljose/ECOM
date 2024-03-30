@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import axios from "axios";
 import { useAppContext } from "@/context";
+import gpay from "../images/gpay.png";
+import paypal from "../images/paypal.png";
+import stripe from "../images/stripe.png";
+import amazonpay from "../images/amazon-pay.png";
+import close from "../images/close.png";
 function CartDetails() {
   const [subTotal, setsubTotal] = useState([]);
   const { state, cartList } = useAppContext();
@@ -47,7 +52,12 @@ function CartDetails() {
                     <td>{item.price}</td>
                     <td>{item.quantity * item.price}</td>
                     <td>
-                      <button>X</button>
+                    <img
+                src={close.src}
+                alt="Cart Logo"
+                className="close__icon"
+                title="CONTACT"
+              />
                     </td>
                   </tr>
                 ))}
@@ -69,10 +79,30 @@ function CartDetails() {
             <hr></hr>
             <h1>We Accept</h1>
             <div className="cart__content__checkout__row">
-              <h3>PayPal</h3>
-              <h3>Strip</h3>
-              <h3>GPay</h3>
-              <h3>PhonePe</h3>
+              <img
+                src={paypal.src}
+                alt="Cart Logo"
+                className="pay__icon"
+                title="CONTACT"
+              />
+              <img
+                src={stripe.src}
+                alt="Cart Logo"
+                className="pay__icon"
+                title="CONTACT"
+              />
+              <img
+                src={gpay.src}
+                alt="Cart Logo"
+                className="pay__icon"
+                title="CONTACT"
+              />
+              <img
+                src={amazonpay.src}
+                alt="Cart Logo"
+                className="pay__icon"
+                title="CONTACT"
+              />
             </div>
           </div>
         </div>
