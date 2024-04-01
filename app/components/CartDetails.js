@@ -9,19 +9,30 @@ import amazonpay from "../images/amazon-pay.png";
 import close from "../images/close.png";
 function CartDetails() {
   const [subTotal, setsubTotal] = useState([]);
-  const { state, cartList } = useAppContext();
+  const { state, cartList,setCartList } = useAppContext();
   useEffect(() => {
     console.log(state.hello, cartList);
+    calulateCartAmt(cartList);
+  }, []);
+  const calulateCartAmt=(cart_Data)=>{
     try {
       let Total = 0;
-      for (let i = 0; i < cartList.length; i++) {
-        Total += cartList[i].price * cartList[i].quantity;
+      for (let i = 0; i < cart_Data.length; i++) {
+        Total += cart_Data[i].price * cart_Data[i].quantity;
       }
       setsubTotal(Total.toFixed(2));
     } catch (error) {
       console.error(error);
     }
-  }, []);
+  }
+  const removeItem=async (id)=>{
+    let cart = [];
+      for (let i = 0; i < cartList.length; i++) {
+        cartList[i].id!=id?cart.push(cartList[i]):'';
+      }
+      await setCartList(cart);
+      calulateCartAmt(cart);
+  }
   return (
     <>
       <div className="cart">
@@ -56,7 +67,8 @@ function CartDetails() {
                 src={close.src}
                 alt="Cart Logo"
                 className="close__icon"
-                title="CONTACT"
+                title="Remove from Cart"
+                onClick={(e) => removeItem(item.id)}
               />
                     </td>
                   </tr>

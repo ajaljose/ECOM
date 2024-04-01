@@ -1,4 +1,4 @@
-import React, { useState  } from 'react';
+import React, { useState } from "react";
 import hero1 from "../images/hero1.png";
 import hero2 from "../images/iphone.png";
 import left from "../images/left.png";
@@ -11,8 +11,8 @@ import tws from "../images/tws.png";
 import speaker from "../images/speaker.png";
 import watch from "../images/watch.png";
 import headphone from "../images/headphone.png";
-import watchesData from './watchesData.json';
-import redheadphone from '../images/redheadphone.png';
+import watchesData from "./watchesData.json";
+import redheadphone from "../images/redheadphone.png";
 import watch0 from "../images/watch0.png";
 import watch1 from "../images/watch1.png";
 import watch2 from "../images/watch2.png";
@@ -33,35 +33,72 @@ import headphone2 from "../images/headphone2.png";
 import avatar1 from "../images/avatar1.png";
 import avatar2 from "../images/avatar2.png";
 import avatar3 from "../images/avatar3.png";
-import Footer from '../components/Footer';
+import Footer from "../components/Footer";
+import addtocart from "../images/addtocart.png";
+import { useAppContext } from "@/context";
 function Home() {
   // Use state to track the current image source
-  const [watchList,setwatchList]=useState([watch0,watch1,watch2,watch3,watch4,watch5,watch6,watch7]);
-  const [earbudsList,setearbudsList]=useState([earbuds1,earbuds2,earbuds3,earbuds4,earbuds5,earbuds6,earbuds7,earbuds8]);
+  const [watchList, setwatchList] = useState([
+    watch0,
+    watch1,
+    watch2,
+    watch3,
+    watch4,
+    watch5,
+    watch6,
+    watch7,
+  ]);
+  const [earbudsList, setearbudsList] = useState([
+    earbuds1,
+    earbuds2,
+    earbuds3,
+    earbuds4,
+    earbuds5,
+    earbuds6,
+    earbuds7,
+    earbuds8,
+  ]);
   const [currentImage, setCurrentImage] = useState(hero1);
   const [gradientStyle, setGradientStyle] = useState({
-    backgroundImage: 'linear-gradient(to right, rgba(67, 97, 238, 0.8), rgba(114, 9, 183, 0.8))',
+    backgroundImage:
+      "linear-gradient(to right, rgba(67, 97, 238, 0.8), rgba(114, 9, 183, 0.8))",
   });
-  const [prodName,setprodName]=useState('HEADPHONES');
+  const [prodName, setprodName] = useState("HEADPHONES");
+  const { cartList, setCartList } = useAppContext();
   // Function to handle click event and change the image source
   const handleClick = () => {
-  
-    if(currentImage === hero1){
-      setGradientStyle({ backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1))',});
-      setCurrentImage(hero2);
-      setprodName('MOBILES');
-    }else{
+    if (currentImage === hero1) {
       setGradientStyle({
-        backgroundImage: 'linear-gradient(to right, rgba(67, 97, 238, 0.8), rgba(114, 9, 183, 0.8))',
+        backgroundImage:
+          "linear-gradient(to right, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1))",
+      });
+      setCurrentImage(hero2);
+      setprodName("MOBILES");
+    } else {
+      setGradientStyle({
+        backgroundImage:
+          "linear-gradient(to right, rgba(67, 97, 238, 0.8), rgba(114, 9, 183, 0.8))",
       });
       setCurrentImage(hero1);
-      setprodName('HEADPHONES');
+      setprodName("HEADPHONES");
     }
-    
+  };
+  const addToCart = (item) => {
+    let mFlag = false;
+    let temp_cartList = cartList;
+    for (let i = 0; i < temp_cartList.length; i++) {
+      if (temp_cartList[i].id == item.id) {
+        temp_cartList[i].quantity += 1;
+        mFlag = true;
+        break;
+      }
+    }
+    mFlag
+      ? setCartList(temp_cartList)
+      : ((item.quantity = 1), setCartList([...cartList, item]));
   };
   return (
     <div className="home">
-     
       <div className="hero" style={gradientStyle}>
         <div className="hero__images">
           <img
@@ -163,9 +200,24 @@ function Home() {
         <div className="product__content">
           {watchesData.map((watch, index) => (
             <div className="product__content__single">
-              <img src={watchList[index].src || watch.imageSrc}></img>
               <h3>{watch.title}</h3>
-              <button>{watch.price}</button>
+              <img src={watchList[index].src || watch.imageSrc}></img>
+              <div className="product__content__single__row">
+                <h3>{watch.price}</h3>
+                <img
+                  src={addtocart.src}
+                  title="ADD TO CART"
+                  onClick={(e) => {
+                    addToCart({
+                      id:  'w_'+index,
+                      title: watch.title,
+                      price: watch.price,
+                      image: watchList[index].src,
+                      quantity: 1,
+                    });
+                  }}
+                ></img>
+              </div>
             </div>
           ))}
         </div>
@@ -188,9 +240,20 @@ function Home() {
         <div className="product__content">
           {watchesData.map((watch, index) => (
             <div className="product__content__single">
-              <img src={earbudsList[index].src || watch.imageSrc}></img>
               <h3>{watch.title}</h3>
-              <button>{watch.price}</button>
+              <img src={earbudsList[index].src || watch.imageSrc}></img>
+              <div className="product__content__single__row">
+                <h3>{watch.price}</h3>
+                <img src={addtocart.src} title="ADD TO CART"onClick={(e) => {
+                    addToCart({
+                      id: 'e_'+index,
+                      title: watch.title,
+                      price: watch.price,
+                      image: earbudsList[index].src,
+                      quantity: 1,
+                    });
+                  }}></img>
+              </div>
             </div>
           ))}
         </div>

@@ -191,6 +191,7 @@
     }
     .product{
         padding: 10rem 15rem;
+        background-color: #efefef;
         &__header{
             font-size: 3rem;
         }
@@ -201,49 +202,48 @@
         &__content{ 
             margin-top: 5rem;
             display: flex;
-            gap: 5rem;
+            gap:3rem;
             flex-wrap: wrap;
             &__single{
                 display: flex;    
                 flex-direction: column;
-                align-items: center;
+                // align-items: center;
+                background-color: #ffffff;
+                padding: 2rem;
                 border-radius: 2rem;
                 img{
                     width: 25rem;
                     filter: drop-shadow(8px 8px 10px gray);
                 } 
-                button{
-                    background-color: #c5d02800;
-                    border: 2px solid #fff;
-                    color:rgb(0, 0, 0);
-                    
-                    padding: .5rem 1rem;
-                    text-align: center;
-                    font-size: 1.6rem;
-                    cursor: pointer;
-                    border-radius:2.7rem;
-                    text-decoration: none;
-        
-                    font-weight: 700;
-                    z-index: 100;
-                    &:active{
-                        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-                    }
-                    &:hover:not(:active){
-                        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-                    }
-                    &:hover{
-                        cursor: pointer;
-                        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-                    }
-                }
-                button::before{
-                    content:'Rs '
-                }  
+               
+                
                 &:hover{
-                    cursor: pointer;
+                    // cursor: pointer;
                     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-                }         
+                }      
+                h3{
+                    font-size: 1.5rem;
+                    font-weight: normal;
+                }
+                &__row{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    h3::before{
+                        content:'Rs '
+                    }  
+                    img{
+                        padding: 1rem;
+                        width: 5rem;
+                        border-radius: 2rem;
+                        // filter: none;
+                        &:hover{
+                            cursor: pointer;
+                            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                        }
+                    } 
+                }   
             }
         }
     }
