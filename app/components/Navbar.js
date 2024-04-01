@@ -4,8 +4,10 @@ import { useRouter } from "next/navigation";
 import bag from "../images/bag.png";
 import home from "../images/home.png";
 import contact from "../images/contact.png";
+import { useAppContext } from "@/context";
 function Navbar() {
   const [inputValue, setInputValue] = useState("");
+  const { cartList } = useAppContext();
   const router=useRouter();
   const handleClick = () => {
     if (inputValue.trim() === "") {
@@ -67,13 +69,18 @@ function Navbar() {
         />
          
           {/* <h3  onClick={()=>{router.replace('/cart')}}>cart</h3> */}
+         <div>
+         <div className="navbar__menu__cart" cart-item={cartList.length}>
           <img
           src={bag.src}
           alt="Cart Logo"
           className="navbar__menuicon"
           title="CART"
           onClick={()=>{router.replace('/cart')}}
+          
         />
+          </div> 
+          </div>          
          <h3  onClick={()=>{router.replace('/products')}}>Shop</h3>
          <img
           src={contact.src}
