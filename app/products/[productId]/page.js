@@ -3,6 +3,11 @@ import React from 'react'
 import Product from '@/app/components/Product';
 import Navbar from "../../components/Navbar";
 import '../../styles/main.scss';
+async function generateStaticParams() {
+  const productIds = Array.from({ length: 20 }, (_, i) => i + 1); // Range 1-20
+  return productIds.map((productId) => ({ productId }));
+}
+
 function ProductDetails(props) {
   return (
     <>
