@@ -1,6 +1,9 @@
 .product {
     padding: 7rem 1rem 1rem 1rem;
 height: 100rem;
+@media (max-width:800px) {
+    height: 140rem;
+}
     &__category {
         color: rgb(185, 185, 185);
         text-transform: uppercase;
@@ -10,21 +13,30 @@ height: 100rem;
     &__hero {
         display: flex;
         width: 100%;
-
+        @media (max-width:800px) {
+            flex-direction: column;
+        }
         &__left {
             width: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-
+            @media (max-width:800px) {
+                width: 100%;
+            }
             img {
                 width: 40rem;
                 height: auto;
-
+                @media (max-width:800px) {
+                    width: 35rem;
+                }
             }
         }
         &__right{
             width: 50%;
+            @media (max-width:800px) {
+                width: 100%;
+            }
             h1{
                 font-size: 5rem;
                 margin-bottom: 3rem;
@@ -35,6 +47,9 @@ height: 100rem;
             }
             &__addtocart{
                 width: 50%;
+                @media (max-width:800px) {
+                    width: 100%;
+                }
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -49,6 +64,9 @@ height: 100rem;
                 background-color: #56907f;
                 color: #ffffff;
                 border: none;
+                @media (max-width:800px) {
+                    width: 100%;
+                }
             }
         }
     }
