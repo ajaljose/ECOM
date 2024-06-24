@@ -15,6 +15,9 @@
                 height: auto;
                 width: 45rem;
                 z-index: 100;
+                @media (max-width:688px) {
+                    width: 35rem;
+                    }
             }
             &_1,&_3{
                 width: 6rem;
@@ -41,6 +44,9 @@
             font-size: 15rem;
             z-index: 90;
             color: #fff;
+            @media (max-width:688px) {
+                font-size: 7rem;
+                }
         }
 
         &__btn1{
@@ -64,6 +70,10 @@
             &:hover:not(:active){
                 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             }
+            @media (max-width:688px) {
+                top:75%;
+            left: 10%;
+                }
         }
 
         &__btn2{
@@ -89,10 +99,17 @@
             &:hover:not(:active){
                 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             }
+            @media (max-width:688px) {
+                top:75%;
+            left: 35%;
+                }
         }
 
     }
     .features{
+        @media (max-width:750px) {
+            flex-direction: column;
+            }
         padding: 4rem;
         display: flex;
         justify-content: space-around;
@@ -103,6 +120,11 @@
         }
     }
     .categories{
+        @media (max-width:750px) {
+            display: flex;
+            flex-direction: column;
+            padding: 7rem 5rem;
+            }
         padding: 7rem 25rem;
         color: #fff;
         display: grid;
@@ -126,6 +148,10 @@
                 left: 50%;
                 bottom: 0;
                 transform: translate(-50%,10%);
+                @media (max-width:750px) {
+                    left: 80%;
+                    width: 20rem;
+                    }
             }
         }
         &__watches{
@@ -164,6 +190,10 @@
                 bottom: 0;
                 
                 transform: translate(0%,10%);
+                @media (max-width:750px) {
+                    left: 60%;
+                    width: 20rem;
+                    }
             }
         }
         grid-gap:4rem;
@@ -190,6 +220,27 @@
         }
     }
     .product{
+        @media (max-width:1540px) {
+            padding: 10rem 10rem;
+        }
+        @media (max-width:1406px) {
+            padding: 10rem 5rem;
+        }
+        @media (max-width:1306px) {
+            padding: 10rem 2rem;
+        }
+        @media (max-width:943px) {
+            padding: 10rem 5rem;
+            height: 130rem;
+           }
+        @media (max-width:688px) {
+        padding: 10rem 8rem;
+        height: 160rem;
+        }
+        @media (max-width:600px) {
+            padding: 10rem 1rem;
+            height: 160rem;
+           }
         padding: 10rem 15rem;
         background-color: #efefef;
         &__header{
@@ -200,6 +251,13 @@
             font-style: italic;
         }
         &__content{ 
+            @media (max-width:1570px) {
+                gap:2rem;
+            }
+            @media (max-width:1540px) {
+                gap:1rem;
+            }
+            
             margin-top: 5rem;
             display: flex;
             gap:3rem;
@@ -214,6 +272,9 @@
                 img{
                     width: 25rem;
                     filter: drop-shadow(8px 8px 10px gray);
+                    @media (max-width:1540px) {
+                        width: 20rem;
+                    }
                 } 
                
                 
@@ -248,6 +309,9 @@
         }
     }
     .banner{
+        @media (max-width:750px) {
+            padding: 0rem 3rem;
+        }
         background-color: #ff1923;
         height: 45rem;
         padding: 0rem 15rem;
@@ -260,11 +324,17 @@
         &__left{
             font-size: 7rem;
             line-height:14rem;
+            @media (max-width:750px) {
+                font-size: 4rem;
+            }
         }
         &__right{
             h3{
                 filter: drop-shadow(8px 8px 10px rgb(0, 0, 0));
                 font-size: 4rem;
+                @media (max-width:750px) {
+                    font-size: 2rem;
+                }
             }
             button{
                 background-color: #000000;
@@ -295,6 +365,11 @@
         left: 10rem;
         top: -12rem;
         filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.848));
+        @media (max-width:750px) {
+            width: 45rem;
+            left: 1rem;
+        top: -10rem;
+        }
        }
     }
     .reviews{
@@ -304,6 +379,10 @@
         color: #ffffff;
         padding: 10rem 20rem;
         gap:6rem;
+        @media (max-width:800px) {
+            flex-direction: column;
+            padding: 10rem 5rem;
+        }
         &__cards{
             
         border-radius: 2rem;
