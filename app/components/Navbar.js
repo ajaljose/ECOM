@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import github from "../images/logo-white.png";
 import { useRouter } from "next/navigation";
